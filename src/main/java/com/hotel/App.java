@@ -110,7 +110,7 @@ public class App {
      * Processa l'opció seleccionada per l'usuari i crida el mètode corresponent.
      */
     public static void gestionarOpcio(int opcio) {
-       //TODO: Implementar switch per gestionar opcions
+       //TODO: Poner switch para crear opciones
        switch (opcio) {
         case 1:
             reservarHabitacio();
@@ -143,6 +143,47 @@ public class App {
     public static void reservarHabitacio() {
         System.out.println("\n===== RESERVAR HABITACIÓ =====");
         //TODO:
+        
+       int tipus;
+       
+        do {
+            // 1. Mostrar tipo de habitación y el precio que tiene para poder elegir la que quiera.
+
+            System.out.println("Tipus d'habitacions disponibles: ");
+            //OPCIÓN 1
+            System.out.println("\n 1. " + TIPUS_ESTANDARD); // \n para que se ponga en otra linea con espacio
+            System.out.println("    El preu es: " + preusHabitacions.get(TIPUS_ESTANDARD) + " €");
+            //OPCION 2
+            System.out.println("\n 2. " + TIPUS_SUITE);
+            System.out.println("    El preu es: " + preusHabitacions.get(TIPUS_SUITE) + " €");
+            //OPCION 3
+            System.out.println("\n 3. " + TIPUS_DELUXE);
+            System.out.println("    El preu es: " + preusHabitacions.get(TIPUS_DELUXE) + " €");        
+            
+            // 2. Ahora seleccionamos el tipo de habitación que queremos 
+        
+            System.out.print("Selecciona un tipus d'habitació (1,2 o 3): ");
+            tipus = sc.nextInt();
+
+            if (tipus == 1){
+                System.out.println("Has seleccionat la habitació tipo estàndard");
+            } else {
+                if (tipus == 2){
+                    System.out.println("Has seleccionat la habitació tipo suite");
+                } else {
+                    if (tipus == 3){
+                        System.out.println("Has seleccionat la habitació tipo deluxe");
+                    } else {
+                        System.out.println("Tipus d'habitació no vàlid. Torna a intentar-ho.");
+                    }
+                } 
+            }             
+        } while (tipus < 1 || tipus > 3); // 
+        // 3. Selecciona serveis addicionals
+        // 4. Calcula preu total
+        // 5. Genera codi de reserva
+
+
         
     }
 
