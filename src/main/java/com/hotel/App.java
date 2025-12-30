@@ -145,7 +145,8 @@ public class App {
         //TODO:
         
        int tipus;
-       
+       double calcularPreuTotal = 0;   // Así a la vez que s ehace la selección de tipo de habitación y servicios va calculando el precio.    
+
         do {
             // 1. Mostrar tipo de habitación y el precio que tiene para poder elegir la que quiera.
 
@@ -162,29 +163,86 @@ public class App {
             
             // 2. Ahora seleccionamos el tipo de habitación que queremos 
         
-            System.out.print("Selecciona un tipus d'habitació (1,2 o 3): ");
+            System.out.print("\n Selecciona un tipus d'habitació (1,2 o 3): ");            
             tipus = sc.nextInt();
 
             if (tipus == 1){
-                System.out.println("Has seleccionat la habitació tipo estàndard");
+                System.out.println("Has seleccionat la habitació tipo estàndard " + TIPUS_ESTANDARD); 
+                calcularPreuTotal += preusHabitacions.get(TIPUS_ESTANDARD);               
             } else {
                 if (tipus == 2){
-                    System.out.println("Has seleccionat la habitació tipo suite");
+                    System.out.println("Has seleccionat la habitació tipo suite " + TIPUS_SUITE);
+                    calcularPreuTotal += preusHabitacions.get(TIPUS_SUITE);                    
                 } else {
                     if (tipus == 3){
-                        System.out.println("Has seleccionat la habitació tipo deluxe");
+                        System.out.println("Has seleccionat la habitació tipo: " + TIPUS_DELUXE); 
+                        calcularPreuTotal += preusHabitacions.get(TIPUS_DELUXE);                       
                     } else {
                         System.out.println("Tipus d'habitació no vàlid. Torna a intentar-ho.");
                     }
                 } 
             }             
-        } while (tipus < 1 || tipus > 3); // 
+        } while (tipus < 1 || tipus > 3); //         
+
         // 3. Selecciona serveis addicionals
+        int serveis;
+
+        do {
+            //3.1 Mostrar el menú con los servicios adicionales.
+            System.out.println("Serveis addicionals disponibles (1,2,3 y 4): ");
+            //OPCIÓN 1
+            System.out.println("\n 1. " + SERVEI_ESMORZAR);
+            System.out.println("    El preu es: " + preusServeis.get(SERVEI_ESMORZAR) + " €");
+            //OPCION 2
+            System.out.println("\n 2. " + SERVEI_GIMNAS);
+            System.out.println("    El preu es: " + preusServeis.get(SERVEI_GIMNAS) + " €");
+            //OPCION 3
+            System.out.println("\n 3. " + SERVEI_PISCINA);
+            System.out.println("    El preu es: " + preusServeis.get(SERVEI_PISCINA) + " €");
+            //OPCION 4
+            System.out.println("\n 4. " + SERVEI_SPA);
+            System.out.println("    El preu es: " + preusServeis.get(SERVEI_SPA) + " €");
+
+            //3.2 Seleccionar el tipo de servicios
+            System.out.println("\n Selecciona els serveis addicionals que vuls afegir a la teua reserva: ");
+            serveis = sc.nextInt();
+
+            switch (serveis) {
+                case 1:
+                    System.out.println("Has seleccionat el servei Esmorzar");
+                    calcularPreuTotal += preusServeis.get(SERVEI_ESMORZAR);
+                    break;
+                case 2:
+                    System.out.println("Has seleccionat el servei Gimnas");
+                    calcularPreuTotal += preusServeis.get(SERVEI_GIMNAS);
+                    break;
+                case 3:
+                    System.out.println("Has seleccionat el servei Piscina");
+                    calcularPreuTotal += preusServeis.get(SERVEI_PISCINA);
+                    break;
+                case 4:
+                    System.out.println("Has seleccionat el servei Spa");
+                    calcularPreuTotal += preusServeis.get(SERVEI_SPA);
+                    break;
+                case 5:
+                    System.out.println("Gracies per seleccionar el serveis addicionals");
+                    break;
+                default:
+                    System.out.println("Opció no valida, torna a intentar-ho");
+                    break;                    
+            }
+        } while (serveis != 5);      
+     
         // 4. Calcula preu total
+              
+        System.out.println("\n El preu total de la teua reserva es: " + calcularPreuTotal + " €");
+
         // 5. Genera codi de reserva
 
+        int codiReservaHabitacio = random.nextInt(900) + 100;
 
-        
+        System.out.println("\n El teu nombre de reserva es: " + codiReservaHabitacio);
+                
     }
 
     /**
