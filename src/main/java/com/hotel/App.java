@@ -122,7 +122,7 @@ public class App {
             consultarDisponibilitat();
             break;
         case 4:
-            llistarReservesPerTipus();
+            obtindreReservaPerTipus();
             break;
         case 5:
             obtindreReserva();
@@ -404,7 +404,17 @@ public class App {
      * Permet consultar els detalls d'una reserva introduint el codi.
      */
     public static void obtindreReserva() {
-        
+        System.out.println("\n===== CONSULTAR RESERVA =====");
+        // TODO: Mostrar dades d'una reserva concreta
+        //1. Pedir al usuario que introduzca el codigo de reserva.
+        int codiReservaUsuario = llegirEnter("Escriu el codi de la seua reserva: ");
+
+        //2. Comprobamos que el codigo existe.
+        if (reserves.containsKey(codiReservaUsuario)) {
+            mostrarDadesReserva(codiReservaUsuario);
+        } else {
+            System.out.println("\n  El codi introduit no es correcte, per favor torne a introduirlo");
+        } 
     }
 
     /**
