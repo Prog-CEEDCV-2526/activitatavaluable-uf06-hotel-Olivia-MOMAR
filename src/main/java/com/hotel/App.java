@@ -299,9 +299,9 @@ public class App {
         //1. Mostrar las habitaciones con precio y disponibilidad
         do {
             System.out.println("\n Selecciona un tipus d'habitació: ");
-            System.out.println("1. " + TIPUS_ESTANDARD + "Precio: " + preusHabitacions.get(TIPUS_ESTANDARD) + " €" + "Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_ESTANDARD));
-            System.out.println("2. " + TIPUS_SUITE + "Precio: " + preusHabitacions.get(TIPUS_SUITE) + " €" + "Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_SUITE));
-            System.out.println("3. " + TIPUS_DELUXE + "Precio: " + preusHabitacions.get(TIPUS_DELUXE) + " €" + "Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_DELUXE));
+            System.out.println("1. " + TIPUS_ESTANDARD + "  Precio: " + preusHabitacions.get(TIPUS_ESTANDARD) + " €" + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_ESTANDARD));
+            System.out.println("2. " + TIPUS_SUITE + "  Precio: " + preusHabitacions.get(TIPUS_SUITE) + " €" + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_SUITE));
+            System.out.println("3. " + TIPUS_DELUXE + "  Precio: " + preusHabitacions.get(TIPUS_DELUXE) + " €" + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_DELUXE));
 
             habitacionsDisponibles = llegirEnter("\n Habitació escogida: ");
 
@@ -312,21 +312,21 @@ public class App {
                     } else {
                         System.out.println("No queden habitacions estàndard disponibles");
                     }
-                    break;
+                    return null;
                 case 2:
                     if (disponibilitatHabitacions.get(TIPUS_SUITE) > 0) {
                         seleccioClient = TIPUS_SUITE;
                     } else {
                         System.out.println("No queden habitacions suite disponibles");
                     }
-                    break;
+                    return null;
                 case 3:
                     if (disponibilitatHabitacions.get(TIPUS_DELUXE) > 0) {
                         seleccioClient = TIPUS_DELUXE;
                     } else {
                         System.out.println("No queden habitacions deluxe disponibles");
                     }
-                    break;
+                    return null;
                 case 4:
                     System.out.println("Eixint del selector.");
                     return null;  // para poder salir del selector
