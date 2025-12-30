@@ -407,11 +407,13 @@ public class App {
         System.out.println("\n===== CONSULTAR RESERVA =====");
         // TODO: Mostrar dades d'una reserva concreta
         //1. Pedir al usuario que introduzca el codigo de reserva.
-        int codiReservaUsuario = llegirEnter("Escriu el codi de la seua reserva: ");
+        int codiReserva; 
+        System.out.println("Escriu el codi de la seua reserva: ");
+        codiReserva = sc.nextInt();
 
         //2. Comprobamos que el codigo existe.
-        if (reserves.containsKey(codiReservaUsuario)) {
-            mostrarDadesReserva(codiReservaUsuario);
+        if (reserves.containsKey(codiReserva)) {
+            mostrarDadesReserva(codiReserva);
         } else {
             System.out.println("\n  El codi introduit no es correcte, per favor torne a introduirlo");
         } 
