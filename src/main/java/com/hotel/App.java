@@ -122,7 +122,7 @@ public class App {
             consultarDisponibilitat();
             break;
         case 4:
-            llistarReservesPerTipus();
+            obtindreReservaPerTipus();
             break;
         case 5:
             obtindreReserva();
@@ -314,35 +314,8 @@ public class App {
      * Funció recursiva. Mostra les dades de totes les reserves
      * associades a un tipus d'habitació.
      */
-    public static void llistarReservesPerTipus() {
-        System.out.println("\n===== LLISTAR RESERVES PER TIPUS =====");
-        System.out.print("Introdueix el tipus d'habitació: ");
-        String tipus = sc.next();
-
-        ArrayList<Integer> codisList = new ArrayList<>();
-        for (Integer codi : reserves.keySet()) {
-            ArrayList<String> dades = reserves.get(codi);
-            if (dades != null && dades.contains(tipus)) {
-                codisList.add(codi);
-            }
-        }
-
-        if (codisList.isEmpty()) {
-            System.out.println("No hi ha reserves per aquest tipus: " + tipus);
-            return;
-        }
-
-        int[] codis = new int[codisList.size()];
-        for (int i = 0; i < codisList.size(); i++) codis[i] = codisList.get(i);
-        llistarReservesPerTipus(codis, tipus);
-    }
-
     public static void llistarReservesPerTipus(int[] codis, String tipus) {
-        System.out.println("\nReserves per tipus: " + tipus);
-        for (int codi : codis) {
-            ArrayList<String> dades = reserves.get(codi);
-            System.out.println("Codi: " + codi + " -> " + (dades == null ? "No disponible" : dades.toString()));
-        }
+         // TODO: Implementar recursivitat
     }
 
     /**
