@@ -251,7 +251,34 @@ public class App {
      */
     public static String seleccionarTipusHabitacio() {
         //TODO:
-        return null;
+        int habitacions; //
+        String seleccioClient = null;
+
+        do {
+            System.out.println("\n Selecciona un tipus d'habitació: ");
+            System.out.println("1. " + TIPUS_ESTANDARD);
+            System.out.println("2. " + TIPUS_SUITE);
+            System.out.println("3. " + TIPUS_DELUXE);
+
+            habitacions = llegirEnter("Habitació escogida: ");
+
+            switch (habitacions) {
+                case 1:
+                    seleccioClient = TIPUS_ESTANDARD;
+                    break;
+                case 2:
+                    seleccioClient = TIPUS_SUITE;
+                    break;                
+                case 3:
+                    seleccioClient = TIPUS_DELUXE;
+                    break;
+                default:
+                    System.out.println("Tipus d'habitació no vàlid. Torna a intentar-ho.");    
+            }
+
+        } while (seleccioClient == null); //esto hace que el bucle se repita hasta tener una opción válida
+
+        return seleccioClient;
     }
 
     /**
