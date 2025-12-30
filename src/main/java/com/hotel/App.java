@@ -122,7 +122,7 @@ public class App {
             consultarDisponibilitat();
             break;
         case 4:
-            llistarReservesPerTipus();
+            obtindreReservaPerTipus();
             break;
         case 5:
             obtindreReserva();
@@ -251,6 +251,7 @@ public class App {
      */
     public static String seleccionarTipusHabitacio() {
         //TODO:
+        
         return null;
     }
 
