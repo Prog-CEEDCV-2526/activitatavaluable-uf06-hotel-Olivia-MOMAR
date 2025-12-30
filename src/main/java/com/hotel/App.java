@@ -253,12 +253,14 @@ public class App {
         //TODO:
         int habitacions; //
         String seleccioClient = null;
-
+        // 1.Mostrar las opciones de habitaciones
         do {
             System.out.println("\n Selecciona un tipus d'habitació: ");
             System.out.println("1. " + TIPUS_ESTANDARD);
             System.out.println("2. " + TIPUS_SUITE);
             System.out.println("3. " + TIPUS_DELUXE);
+
+            //2.Pedimos que nos indique el usuario con un número la habitación que quiere y le aparece el nombre.
 
             habitacions = llegirEnter("Habitació escogida: ");
 
@@ -272,6 +274,9 @@ public class App {
                 case 3:
                     seleccioClient = TIPUS_DELUXE;
                     break;
+                case 4: 
+                    System.out.println("Eixint del selector.");
+                    return null;  // para poder salir del selector  
                 default:
                     System.out.println("Tipus d'habitació no vàlid. Torna a intentar-ho.");    
             }
@@ -289,7 +294,48 @@ public class App {
     public static String seleccionarTipusHabitacioDisponible() {
         System.out.println("\nTipus d'habitació disponibles:");
         //TODO:
-        return null;
+        int habitacionsDisponibles;
+        String seleccioClient = null;
+        //1. Mostrar las habitaciones con precio y disponibilidad
+        do {
+            System.out.println("\n Selecciona un tipus d'habitació: ");
+            System.out.println("1. " + TIPUS_ESTANDARD + "Precio: " + preusHabitacions.get(TIPUS_ESTANDARD) + " €" + "Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_ESTANDARD));
+            System.out.println("2. " + TIPUS_SUITE + "Precio: " + preusHabitacions.get(TIPUS_SUITE) + " €" + "Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_SUITE));
+            System.out.println("3. " + TIPUS_DELUXE + "Precio: " + preusHabitacions.get(TIPUS_DELUXE) + " €" + "Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_DELUXE));
+
+            habitacionsDisponibles = llegirEnter("\n Habitació escogida: ");
+
+            switch (habitacionsDisponibles) {
+                case 1:
+                    if (disponibilitatHabitacions.get(TIPUS_ESTANDARD) > 0) {
+                        seleccioClient = TIPUS_ESTANDARD;
+                    } else {
+                        System.out.println("No queden habitacions estàndard disponibles");
+                    }
+                    break;
+                case 2:
+                    if (disponibilitatHabitacions.get(TIPUS_SUITE) > 0) {
+                        seleccioClient = TIPUS_SUITE;
+                    } else {
+                        System.out.println("No queden habitacions suite disponibles");
+                    }
+                    break;
+                case 3:
+                    if (disponibilitatHabitacions.get(TIPUS_DELUXE) > 0) {
+                        seleccioClient = TIPUS_DELUXE;
+                    } else {
+                        System.out.println("No queden habitacions deluxe disponibles");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Eixint del selector.");
+                    return null;  // para poder salir del selector
+                default:
+                    System.out.println("Tipus d'habitació no vàlid. Torna a intentar-ho.");            
+            }
+        } while (seleccioClient == null );
+
+        return seleccioClient;
     }
 
     /**
