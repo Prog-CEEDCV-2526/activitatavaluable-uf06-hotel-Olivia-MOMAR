@@ -310,20 +310,23 @@ public class App {
                     if (disponibilitatHabitacions.get(TIPUS_ESTANDARD) > 0) {
                         seleccioClient = TIPUS_ESTANDARD;
                     } else {
-                        return null;
+                        System.out.println("No queden habitacions estàndard disponibles");
                     }
+                    break;
                 case 2:
                     if (disponibilitatHabitacions.get(TIPUS_SUITE) > 0) {
                         seleccioClient = TIPUS_SUITE;
                     } else {
-                        return null;
+                        System.out.println("No queden habitacions suite disponibles");
                     }
+                    break;
                 case 3:
                     if (disponibilitatHabitacions.get(TIPUS_DELUXE) > 0) {
                         seleccioClient = TIPUS_DELUXE;
                     } else {
-                        return null;
+                        System.out.println("No queden habitacions deluxe disponibles");
                     }
+                    break;
                 case 4:
                     System.out.println("Eixint del selector.");
                     return null;  // para poder salir del selector
@@ -360,7 +363,17 @@ public class App {
      */
     public static int generarCodiReserva() {
         //TODO:
-        return 0;
+        int codiReserva;
+        boolean existent;
+        //Primero generamos un codido y luego comprobamos si ya existe. Si existe tiene que generar otro codigo.
+
+        do {
+            codiReserva = random.nextInt(900) + 100;
+            existent = reserves.containsKey(codiReserva);
+
+        } while (existent); // Si ya existe vuelve a empezar el bucle hasta que encuentre uno que no exista.
+
+        return codiReserva;
     }
 
     /**
