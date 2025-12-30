@@ -122,7 +122,7 @@ public class App {
             consultarDisponibilitat();
             break;
         case 4:
-            obtindreReservaPerTipus();
+            llistarReservesPerTipus();
             break;
         case 5:
             obtindreReserva();
@@ -406,7 +406,15 @@ public class App {
     public static void obtindreReserva() {
         System.out.println("\n===== CONSULTAR RESERVA =====");
         // TODO: Mostrar dades d'una reserva concreta
- 
+        //1. Pedir al usuario que introduzca el codigo de reserva.
+        int codiReservaUsuario = llegirEnter("Escriu el codi de la seua reserva: ");
+
+        //2. Comprobamos que el codigo existe.
+        if (reserves.containsKey(codiReservaUsuario)) {
+            mostrarDadesReserva(codiReservaUsuario);
+        } else {
+            System.out.println("\n  El codi introduit no es correcte, per favor torne a introduirlo");
+        } 
     }
 
     /**
@@ -423,6 +431,7 @@ public class App {
      */
     public static void mostrarDadesReserva(int codi) {
        // TODO: Imprimir tota la informació d'una reserva
+
     }
 
     // --------- MÈTODES AUXILIARS (PER MILLORAR LEGIBILITAT) ---------
