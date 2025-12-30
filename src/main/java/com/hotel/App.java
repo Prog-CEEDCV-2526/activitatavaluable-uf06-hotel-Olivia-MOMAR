@@ -310,23 +310,20 @@ public class App {
                     if (disponibilitatHabitacions.get(TIPUS_ESTANDARD) > 0) {
                         seleccioClient = TIPUS_ESTANDARD;
                     } else {
-                        System.out.println("No queden habitacions estàndard disponibles");
+                        return null;
                     }
-                    return null;
                 case 2:
                     if (disponibilitatHabitacions.get(TIPUS_SUITE) > 0) {
                         seleccioClient = TIPUS_SUITE;
                     } else {
-                        System.out.println("No queden habitacions suite disponibles");
+                        return null;
                     }
-                    return null;
                 case 3:
                     if (disponibilitatHabitacions.get(TIPUS_DELUXE) > 0) {
                         seleccioClient = TIPUS_DELUXE;
                     } else {
-                        System.out.println("No queden habitacions deluxe disponibles");
+                        return null;
                     }
-                    return null;
                 case 4:
                     System.out.println("Eixint del selector.");
                     return null;  // para poder salir del selector
