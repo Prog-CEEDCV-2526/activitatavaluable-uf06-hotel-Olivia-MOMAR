@@ -122,7 +122,7 @@ public class App {
             consultarDisponibilitat();
             break;
         case 4:
-            obtindreReservaPerTipus();
+            llistarReservesPerTipus();
             break;
         case 5:
             obtindreReserva();
