@@ -122,7 +122,7 @@ public class App {
             consultarDisponibilitat();
             break;
         case 4:
-            llistarReservesPerTipus();
+            obtindreReservaPerTipus();
             break;
         case 5:
             obtindreReserva();
@@ -237,7 +237,7 @@ public class App {
               
         System.out.println("\n El preu total de la teua reserva es: " + calcularPreuTotal + " €");
 
-        // 5. Genera codi de reserva xcv
+        // 5. Genera codi de reserva
 
         int codiReservaHabitacio = random.nextInt(900) + 100;
 
