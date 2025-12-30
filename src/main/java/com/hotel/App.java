@@ -237,7 +237,7 @@ public class App {
               
         System.out.println("\n El preu total de la teua reserva es: " + calcularPreuTotal + " €");
 
-        // 5. Genera codi de reserva
+        // 5. Genera codi de reserva xcv
 
         int codiReservaHabitacio = random.nextInt(900) + 100;
 
@@ -247,7 +247,7 @@ public class App {
 
     /**
      * Pregunta a l'usuari un tipus d'habitació en format numèric i
-     * retorna el nom del tipus.
+     * retorna el nom del tipus. 
      */
     public static String seleccionarTipusHabitacio() {
         //TODO:
