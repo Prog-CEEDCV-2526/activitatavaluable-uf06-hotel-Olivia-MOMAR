@@ -145,7 +145,8 @@ public class App {
         //TODO: ESTE CREO QUE NO LO CORRIGE
         
        int tipus;
-       double calcularPreuTotal = 0;   // Así a la vez que s ehace la selección de tipo de habitación y servicios va calculando el precio.    
+       double calcularPreuTotal = 0;   // Así a la vez que s ehace la selección de tipo de habitación y servicios va calculando el precio. 
+       ArrayList<String> dadesReserva = new ArrayList<>();   
 
         do {
             // 1. Mostrar tipo de habitación y el precio que tiene para poder elegir la que quiera.
@@ -163,8 +164,8 @@ public class App {
             
             // 2. Ahora seleccionamos el tipo de habitación que queremos 
         
-            System.out.print("\n Selecciona un tipus d'habitació (1,2 o 3): ");            
-            tipus = sc.nextInt();
+                       
+            tipus = llegirEnter("\n Selecciona un tipus d'habitació (1,2 o 3): ");
             sc.nextLine();
 
             if (tipus == 1){
@@ -205,8 +206,8 @@ public class App {
             System.out.println("    El preu es: " + preusServeis.get(SERVEI_SPA) + " €");
 
             //3.2 Seleccionar el tipo de servicios
-            System.out.println("\n Selecciona els serveis addicionals que vuls afegir a la teua reserva: ");
-            serveis = sc.nextInt();
+            
+            serveis = llegirEnter("\n Selecciona els serveis addicionals que vuls afegir a la teua reserva: ");
             sc.nextLine();
 
 
@@ -237,13 +238,13 @@ public class App {
         } while (serveis != 5);      
      
         // 4. Calcula preu total
-              
-        System.out.println("\n El preu total de la teua reserva es: " + calcularPreuTotal + " €");
-
+        dadesReserva.add("\\n El preu total de la teua reserva es: " + calcularPreuTotal + " €");      
+        
         // 5. Genera codi de reserva
 
         int codiReservaHabitacio = random.nextInt(900) + 100;
-
+        reserves.put(codiReservaHabitacio, dadesReserva);
+        
         System.out.println("\n El teu nombre de reserva es: " + codiReservaHabitacio);
                 
     }
