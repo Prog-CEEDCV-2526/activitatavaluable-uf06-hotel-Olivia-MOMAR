@@ -381,30 +381,19 @@ public class App {
     }
 
     /**
-     * Mostra la disponibilitat actual de les habitacions (lliures i ocupades).
+     * Mostra la disponibilitat actual de les habitacions (lliures i ocupades) .
      */
     public static void consultarDisponibilitat() {
         // TODO: Mostrar lliures i ocupades
         System.out.println("TIPUS\tLLIURES\tOCUPADES");
         
-        // DA ERROR
-        //Para cada tipo vamos a calcular las que habia totales iniciales y restarle las disponibles ahora.
-        //1. estándard
-        int llE = disponibilitatHabitacions.get(TIPUS_ESTANDARD);
-        int ocE = capacitatInicial.get(TIPUS_ESTANDARD) - llE;
-        System.out.println(TIPUS_ESTANDARD + "\t" + llE + "\t" + ocE);
-        
-
-        //2. Suite
-        int llS = disponibilitatHabitacions.get(TIPUS_SUITE);
-        int ocS = capacitatInicial.get(TIPUS_SUITE) - llS;
-        System.out.println(TIPUS_SUITE + "\t" + llS + "\t" + ocS);
-        
-
-        //3. Suite
-        int llD = disponibilitatHabitacions.get(TIPUS_DELUXE);
-        int ocD = capacitatInicial.get(TIPUS_DELUXE) - llD;
-        System.out.println(TIPUS_DELUXE + "\t" + llD + "\t" + ocD);            
+       String[] tipus = {TIPUS_ESTANDARD, TIPUS_SUITE, TIPUS_DELUXE};
+       for (int i=0; i < tipus.length; i++); {
+        String t = tipus[i];
+        int lliures = disponibilitatHabitacions.get(t);
+        int ocupades = capacitatInicial.get(t) - lliures;
+        System.out.println(t + "\t" + lliures + "\t" + ocupades");
+       }           
 
     }
 
