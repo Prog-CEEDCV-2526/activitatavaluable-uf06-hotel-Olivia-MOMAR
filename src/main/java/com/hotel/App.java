@@ -158,7 +158,7 @@ public class App {
             reserves.put(codiReserva, dadesReserva);
 
             int actual = disponibilitatHabitacions.get(tipus);
-            int nouTotal = actual - 1
+            int nouTotal = actual - 1;
             disponibilitatHabitacions.put(tipus, nouTotal);
 
             float preuFinal = calcularPreuTotal(tipus, serveis);
