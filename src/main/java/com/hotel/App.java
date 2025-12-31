@@ -432,8 +432,10 @@ public class App {
      */
     public static void mostrarDadesReserva(int codi) {
        // TODO: Imprimir tota la informació d'una reserva
-
-
+       if (reserves.containsKey(codi)) {
+        ArrayList<String> d = reserves.get(codi);
+        System.out.println("Reserva: " + codi + "Tipus: " + d.get(0));        
+       }
     }
 
     // --------- MÈTODES AUXILIARS (PER MILLORAR LEGIBILITAT) ---------
