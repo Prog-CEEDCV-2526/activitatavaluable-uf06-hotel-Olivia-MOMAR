@@ -386,9 +386,9 @@ public class App {
     public static void consultarDisponibilitat() {
         // TODO: Mostrar lliures i ocupades
         System.out.println("TIPUS\tLLIURES\tOCUPADES");
-        mostrarDisponibilitatTipus(TIPUS_ESTANDARD);
-        mostrarDisponibilitatTipus(TIPUS_SUITE);
-        mostrarDisponibilitatTipus(TIPUS_DELUXE);      
+        mostrarInfoTipus(TIPUS_ESTANDARD);
+        mostrarInfoTipus(TIPUS_SUITE);
+        mostrarInfoTipus(TIPUS_DELUXE);      
     }
 
     /**
