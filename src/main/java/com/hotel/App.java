@@ -385,26 +385,26 @@ public class App {
      */
     public static void consultarDisponibilitat() {
         // TODO: Mostrar lliures i ocupades
-        System.out.println("Llistat con las habitacions disponibles");
+        System.out.println("TIPUS\tLLIURES\tOCUPADES");
 
         //Para cada tipo vamos a calcular las que habia totales iniciales y restarle las disponibles ahora.
         //1. estándard
         int lliuresEstandard = disponibilitatHabitacions.get(TIPUS_ESTANDARD);
         int ocupadesEstandard = capacitatInicial.get(TIPUS_ESTANDARD) - lliuresEstandard;
-        System.out.println("Habitacions estándard ocupades: " + ocupadesEstandard);
-        System.out.println("Habitacions estándard lliures: " + lliuresEstandard);
+        System.out.println(TIPUS_ESTANDARD + "\t" + lliuresEstandard + "\t" + ocupadesEstandard);
+        
 
         //2. Suite
         int lliuresSuite = disponibilitatHabitacions.get(TIPUS_SUITE);
         int ocupadesSuite = capacitatInicial.get(TIPUS_SUITE) - lliuresSuite;
-        System.out.println("Habitacions estándard ocupades: " + ocupadesSuite);
-        System.out.println("Habitacions estándard lliures: " + lliuresSuite);
+        System.out.println(TIPUS_SUITE + "\t" + lliuresSuite + "\t" + ocupadesSuite);
+        
 
         //3. Suite
         int lliuresDeluxe = disponibilitatHabitacions.get(TIPUS_DELUXE);
         int ocupadesDeluxe = capacitatInicial.get(TIPUS_DELUXE) - lliuresDeluxe;
-        System.out.println("Habitacions estándard ocupades: " + ocupadesDeluxe);
-        System.out.println("Habitacions estándard lliures: " + lliuresDeluxe);
+        System.out.println(TIPUS_DELUXE + "\t" + lliuresDeluxe + "\t" + ocupadesDeluxe);
+        
       
 
     }
