@@ -287,7 +287,7 @@ public class App {
 
             servei = llegirEnter("Selecciona el serveis que vulgues: \n");
 
-            String serveiSeleccionat = sc.next();
+            String serveiSeleccionat = "";
             if (servei == 1) {
                     serveiSeleccionat = SERVEI_ESMORZAR;
             } else {
