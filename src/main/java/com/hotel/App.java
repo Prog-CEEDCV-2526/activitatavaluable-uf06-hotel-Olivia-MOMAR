@@ -145,7 +145,7 @@ public class App {
         //TODO: 
         String tipus = SeleccionaTipusHabitacioDisponible();
 
-        if (tipus !n null) {
+        if (tipus != null) {
             ArrayList<String> serveis = seleccionarServeis();
             int codiReserva = generarCodiReserva();
 
@@ -166,8 +166,6 @@ public class App {
             System.out.println("El seu codi de reserva es: " + codiReserva);
             System.out.println("La habitació seleccionada es: " + tipus);
             System.out.println("El preu total (IVA inclòs): " + preuFinal + " €");
-
-
         } else {
             System.out.println("La reserva no s'ha pogut gestionar.");
         }    
