@@ -389,21 +389,21 @@ public class App {
 
         //Para cada tipo vamos a calcular las que habia totales iniciales y restarle las disponibles ahora.
         //1. estándard
-        int lliuresEstandard = disponibilitatHabitacions.get(TIPUS_ESTANDARD);
-        int ocupadesEstandard = capacitatInicial.get(TIPUS_ESTANDARD) - lliuresEstandard;
-        System.out.println(TIPUS_ESTANDARD + "\t" + lliuresEstandard + "\t" + ocupadesEstandard);
+        int lliuresE = disponibilitatHabitacions.get(TIPUS_ESTANDARD);
+        int ocupadesE = capacitatInicial.get(TIPUS_ESTANDARD) - lliuresE;
+        System.out.println(TIPUS_ESTANDARD + "\t" + lliuresE + "\t" + ocupadesE);
         
 
         //2. Suite
-        int lliuresSuite = disponibilitatHabitacions.get(TIPUS_SUITE);
-        int ocupadesSuite = capacitatInicial.get(TIPUS_SUITE) - lliuresSuite;
-        System.out.println(TIPUS_SUITE + "\t" + lliuresSuite + "\t" + ocupadesSuite);
+        int lliuresS = disponibilitatHabitacions.get(TIPUS_SUITE);
+        int ocupadesS = capacitatInicial.get(TIPUS_SUITE) - lliuresS;
+        System.out.println(TIPUS_SUITE + "\t" + lliuresS + "\t" + ocupadesS);
         
 
         //3. Suite
-        int lliuresDeluxe = disponibilitatHabitacions.get(TIPUS_DELUXE);
-        int ocupadesDeluxe = capacitatInicial.get(TIPUS_DELUXE) - lliuresDeluxe;
-        System.out.println(TIPUS_DELUXE + "\t" + lliuresDeluxe + "\t" + ocupadesDeluxe);
+        int lliuresD = disponibilitatHabitacions.get(TIPUS_DELUXE);
+        int ocupadesD = capacitatInicial.get(TIPUS_DELUXE) - lliuresD;
+        System.out.println(TIPUS_DELUXE + "\t" + lliuresD + "\t" + ocupadesD);
         
       
 
@@ -422,7 +422,7 @@ public class App {
      */
     public static void obtindreReserva() {
         System.out.println("\n===== CONSULTAR RESERVA =====");
-        // TODO: Mostrar dades d'una reserva concreta NO LO CORRIGE
+        // TODO: Mostrar dades d'una reserva concreta 
         //1. Pedir al usuario que introduzca el codigo de reserva.
         int codiReservaUsuario = llegirEnter("Escriu el codi de la seua reserva: ");
 
