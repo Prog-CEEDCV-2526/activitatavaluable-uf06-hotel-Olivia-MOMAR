@@ -367,13 +367,13 @@ public class App {
 
          if (reserves.containsKey(codiReserva)) {
             ArrayList<String> dades = reserves.get(codiReserva);
-            String tipus = dades.get(0);
+            String tipus = dades.get(0); // Aqui comprobamos que existe ese codigo de reserva.
 
             int libres = disponibilitatHabitacions.get(tipus);
-            disponibilitatHabitacions.put(tipus, libres + 1);
+            disponibilitatHabitacions.put(tipus, libres + 1); //Añadimos a la lista de disponibles la que vamos a eliminar.
 
             reserves.remove(codiReserva);
-            System.out.println("La reserva ha sigut eliminada amb exit");
+            System.out.println("La reserva ha sigut eliminada amb exit"); // Aqui hemos eliminado la reserva.
             
          } else {
             System.out.println("No hi ha ninguna reserva amb aquest codi");
@@ -385,6 +385,27 @@ public class App {
      */
     public static void consultarDisponibilitat() {
         // TODO: Mostrar lliures i ocupades
+        System.out.println("Llistat con las habitacions disponibles");
+
+        //Para cada tipo vamos a calcular las que habia totales iniciales y restarle las disponibles ahora.
+        //1. estándard
+        int lliuresEstandard = disponibilitatHabitacions.get(TIPUS_ESTANDARD);
+        int ocupadesEstandard = capacitatInicial.get(TIPUS_ESTANDARD) - lliuresEstandard;
+        System.out.println("Habitacions estándard ocupades: " + ocupadesEstandard);
+        System.out.println("Habitacions estándard lliures: " + lliuresEstandard);
+
+        //2. Suite
+        int lliuresSuite = disponibilitatHabitacions.get(TIPUS_SUITE);
+        int ocupadesSuite = capacitatInicial.get(TIPUS_SUITE) - lliuresSuite;
+        System.out.println("Habitacions estándard ocupades: " + ocupadesSuite);
+        System.out.println("Habitacions estándard lliures: " + lliuresSuite);
+
+        //3. Suite
+        int lliuresDeluxe = disponibilitatHabitacions.get(TIPUS_DELUXE);
+        int ocupadesDeluxe = capacitatInicial.get(TIPUS_DELUXE) - lliuresDeluxe;
+        System.out.println("Habitacions estándard ocupades: " + ocupadesDeluxe);
+        System.out.println("Habitacions estándard lliures: " + lliuresDeluxe);
+      
 
     }
 
