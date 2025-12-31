@@ -145,8 +145,7 @@ public class App {
         //TODO: ESTE CREO QUE NO LO CORRIGE
         
        int tipus;
-       double calcularPreuTotal = 0;   // Así a la vez que s ehace la selección de tipo de habitación y servicios va calculando el precio. 
-       ArrayList<String> dadesReserva = new ArrayList<>();   
+       double calcularPreuTotal = 0;   // Así a la vez que s ehace la selección de tipo de habitación y servicios va calculando el precio.    
 
         do {
             // 1. Mostrar tipo de habitación y el precio que tiene para poder elegir la que quiera.
@@ -238,13 +237,13 @@ public class App {
         } while (serveis != 5);      
      
         // 4. Calcula preu total
-        dadesReserva.add("\\n El preu total de la teua reserva es: " + calcularPreuTotal + " €");      
-        
+              
+        System.out.println("\n Preu total: " + calcularPreuTotal + " €");
+
         // 5. Genera codi de reserva
 
         int codiReservaHabitacio = random.nextInt(900) + 100;
-        reserves.put(codiReservaHabitacio, dadesReserva);
-        
+
         System.out.println("\n El teu nombre de reserva es: " + codiReservaHabitacio);
                 
     }
