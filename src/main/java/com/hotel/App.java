@@ -386,9 +386,9 @@ public class App {
     public static void consultarDisponibilitat() {
         // TODO: Mostrar lliures i ocupades
         System.out.println("TIPUS\tLLIURES\tOCUPADES");
-        mostrarInfoTipus(TIPUS_ESTANDARD);
-        mostrarInfoTipus(TIPUS_SUITE);
-        mostrarInfoTipus(TIPUS_DELUXE);      
+        mostrarDisponibilitatTipus(TIPUS_ESTANDARD);
+        mostrarDisponibilitatTipus(TIPUS_SUITE);
+        mostrarDisponibilitatTipus(TIPUS_DELUXE);      
     }
 
     /**
@@ -397,6 +397,7 @@ public class App {
      */
     public static void llistarReservesPerTipus(int[] codis, String tipus) {
          // TODO: Implementar recursivitat
+
     }
 
     /**
