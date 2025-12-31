@@ -361,28 +361,23 @@ public class App {
             servei = llegirEnter("Selecciona el serveis que vulgues: ");
 
             String serveiSeleccionat = "";
-            switch (servei) {
-                case 1:
+            if (servei == 1) {
                     serveiSeleccionat = SERVEI_ESMORZAR;
-                    break;
-                case 2:
-                    serveiSeleccionat = SERVEI_GIMNAS;
-                    break;  
-                case 3:
-                    serveiSeleccionat = SERVEI_PISCINA;
-                    break;
-                case 4:
-                    serveiSeleccionat = SERVEI_SPA;
-                    break;
-                case 5:
-                    
-                    break;              
-            
-                default:
-                    System.out.println("Opció incorrecta, torna ha intertar-ho");
-                    break;
+            } else {
+                if (servei == 2) {
+                    serveiSeleccionat = SERVEI_GIMNAS;                    
+                } else {
+                    if (servei == 3) {
+                        serveiSeleccionat = SERVEI_GIMNAS;
+                    } else {
+                        if (servei == 4) {
+                            serveiSeleccionat = SERVEI_SPA;
+                        }
+                    }
+                }
             }
-
+               
+            
             // Ahora tenemos que comprobar si ese servicio ya esta cogido para que no puedan cogerlo dos veces.
             if (servei >= 1 && servei <=4) {
                 if (serveisEscogits.contains(serveiSeleccionat)) {
