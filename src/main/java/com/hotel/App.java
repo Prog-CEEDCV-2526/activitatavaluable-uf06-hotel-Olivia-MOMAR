@@ -164,11 +164,11 @@ public class App {
             // 2. Ahora seleccionamos el tipo de habitación que queremos 
         
                        
-            tipus = llegirEnter("\n Selecciona un tipus d'habitació (1,2 o 3): ");
-            sc.nextLine();
+            tipus = llegirEnter("Selecciona un tipus d'habitació (1,2 o 3): ");
+            
 
             if (tipus == 1){
-                System.out.println("Has seleccionat la habitació tipo estàndard " + TIPUS_ESTANDARD); 
+                System.out.println(" Has seleccionat la habitació tipo estàndard " + TIPUS_ESTANDARD); 
                 calcularPreuTotal += preusHabitacions.get(TIPUS_ESTANDARD);               
             } else {
                 if (tipus == 2){
@@ -206,8 +206,8 @@ public class App {
 
             //3.2 Seleccionar el tipo de servicios
             
-            serveis = llegirEnter("\n Selecciona els serveis addicionals que vuls afegir a la teua reserva: ");
-            sc.nextLine();
+            serveis = llegirEnter(" Selecciona els serveis addicionals que vuls afegir a la teua reserva: ");
+            
 
 
             switch (serveis) {
@@ -306,7 +306,7 @@ public class App {
             System.out.println("2. " + TIPUS_SUITE + "  Precio: " + preusHabitacions.get(TIPUS_SUITE) + " €" + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_SUITE));
             System.out.println("3. " + TIPUS_DELUXE + "  Precio: " + preusHabitacions.get(TIPUS_DELUXE) + " €" + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_DELUXE));
 
-            habitacionsDisponibles = llegirEnter("\n Habitació escogida: ");
+            habitacionsDisponibles = llegirEnter(" Habitació escogida: ");
 
             switch (habitacionsDisponibles) {
                 case 1:
@@ -368,7 +368,7 @@ public class App {
                     serveiSeleccionat = SERVEI_GIMNAS;                    
                 } else {
                     if (servei == 3) {
-                        serveiSeleccionat = SERVEI_GIMNAS;
+                        serveiSeleccionat = SERVEI_PISCINA;
                     } else {
                         if (servei == 4) {
                             serveiSeleccionat = SERVEI_SPA;
@@ -399,7 +399,11 @@ public class App {
      */
     public static float calcularPreuTotal(String tipusHabitacio, ArrayList<String> serveisSeleccionats) {
         //TODO:
-        return 0;
+        float suma = preusHabitacions.get(tipusHabitacio);
+        for (String servei : serveisSeleccionats) {
+            suma += preusServeis.get(servei);
+        }
+        return suma * (1 + IVA);
     }
 
     /**
@@ -428,6 +432,9 @@ public class App {
     public static void alliberarHabitacio() {
         System.out.println("\n===== ALLIBERAR HABITACIÓ =====");
          // TODO: Demanar codi, tornar habitació i eliminar reserva
+
+
+
     }
 
     /**
