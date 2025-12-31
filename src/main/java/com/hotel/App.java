@@ -363,19 +363,19 @@ public class App {
             String serveiSeleccionat = "";
             switch (servei) {
                 case 1:
-                    serveiSeleccionat = SERVEI_ESMORZAR
+                    serveiSeleccionat = SERVEI_ESMORZAR;
                     break;
                 case 2:
-                    serveiSeleccionat = SERVEI_GIMNAS
+                    serveiSeleccionat = SERVEI_GIMNAS;
                     break;  
                 case 3:
-                    serveiSeleccionat = SERVEI_PISCINA
+                    serveiSeleccionat = SERVEI_PISCINA;
                     break;
                 case 4:
-                    serveiSeleccionat = SERVEI_SPA
+                    serveiSeleccionat = SERVEI_SPA;
                     break;
                 case 5:
-                    System.out.println("Ha terminat de escogir el serveis");
+                    
                     break;              
             
                 default:
@@ -384,7 +384,7 @@ public class App {
             }
 
             // Ahora tenemos que comprobar si ese servicio ya esta cogido para que no puedan cogerlo dos veces.
-            if (servei >= 1 && servei <=4>) {
+            if (servei >= 1 && servei <=4) {
                 if (serveisEscogits.contains(serveiSeleccionat)) {
                     System.out.println("Error: Ya ha seleccionat este servei previament");
                 } else {
