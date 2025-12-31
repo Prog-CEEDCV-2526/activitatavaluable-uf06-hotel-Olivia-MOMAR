@@ -154,15 +154,15 @@ public class App {
             for (int i = 0; i <serveis.size(); i++) {
                 dadesReserva.add(serveis.get(i));
             }
+            
+            float preuFinal = calcularPreuTotal(tipus, serveis);
+            dadesReserva.add(Float.toString(preuFinal));
 
             reserves.put(codiReserva, dadesReserva);
 
             int actual = disponibilitatHabitacions.get(tipus);
             int nouTotal = actual - 1;
             disponibilitatHabitacions.put(tipus, nouTotal);
-
-            float preuFinal = calcularPreuTotal(tipus, serveis);
-            dadesReserva.add(Float.toString(preuFinal));
 
             System.out.println("La seua reserva ha sigut completada");
             System.out.println("El seu codi de reserva es: " + codiReserva);
@@ -434,7 +434,7 @@ public class App {
        // TODO: Imprimir tota la informació d'una reserva
        if (reserves.containsKey(codi)) {
         ArrayList<String> d = reserves.get(codi);
-        
+
         System.out.println("Reserva: " + codi + "Tipus: " + d.get(0));        
        }
 
