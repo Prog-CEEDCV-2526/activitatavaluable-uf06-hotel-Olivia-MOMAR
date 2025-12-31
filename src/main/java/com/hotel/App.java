@@ -143,7 +143,7 @@ public class App {
     public static void reservarHabitacio() {
         System.out.println("\n===== RESERVAR HABITACIÓ =====");
         //TODO: 
-        String tipus = SeleccionaTipusHabitacioDisponible();
+        String tipus = seleccionarTipusHabitacioDisponible();
 
         if (tipus != null) {
             ArrayList<String> serveis = seleccionarServeis();
