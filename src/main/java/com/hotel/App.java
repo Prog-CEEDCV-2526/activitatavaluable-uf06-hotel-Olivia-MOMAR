@@ -191,7 +191,7 @@ public class App {
 
             //2.Pedimos que nos indique el usuario con un número la habitación que quiere y le aparece el nombre.
 
-            habitacions = llegirEnter("Habitació escogida: ");
+            habitacions = llegirEnter("Habitació escogida: \n");
 
             switch (habitacions) {
                 case 1:
@@ -232,7 +232,7 @@ public class App {
             System.out.println("2. " + TIPUS_SUITE + "  Precio: " + preusHabitacions.get(TIPUS_SUITE) + " € " + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_SUITE));
             System.out.println("3. " + TIPUS_DELUXE + "  Precio: " + preusHabitacions.get(TIPUS_DELUXE) + " € " + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_DELUXE));
 
-            habitacionsDisponibles = llegirEnter(" Habitació escogida: ");
+            habitacionsDisponibles = llegirEnter(" Habitació escogida: \n");
 
             switch (habitacionsDisponibles) {
                 case 1:
@@ -285,7 +285,7 @@ public class App {
             System.out.println("4." + " " + SERVEI_SPA + " " + preusServeis.get(SERVEI_SPA) + " €");
             
 
-            servei = llegirEnter("Selecciona el serveis que vulgues: ");
+            servei = llegirEnter("Selecciona el serveis que vulgues: \n");
 
             String serveiSeleccionat = "";
             if (servei == 1) {
@@ -364,7 +364,7 @@ public class App {
         System.out.println("\n===== ALLIBERAR HABITACIÓ =====");
          // TODO: Demanar codi, tornar habitació i eliminar reserva
          int codiReserva;
-         codiReserva = llegirEnter("Escriu el codi de reserva: ");
+         codiReserva = llegirEnter("Escriu el codi de reserva: \n");
 
          if (reserves.containsKey(codiReserva)) {
             ArrayList<String> dades = reserves.get(codiReserva);
@@ -386,7 +386,7 @@ public class App {
      */
     public static void consultarDisponibilitat() {
         // TODO: Mostrar lliures i ocupades
-        System.out.println("\tTipus\tLliures\tOcupades");
+        System.out.println("Tipus\tLliures\tOcupades");
         mostrarDisponibilitatTipus(TIPUS_ESTANDARD);
         mostrarDisponibilitatTipus(TIPUS_SUITE);
         mostrarDisponibilitatTipus(TIPUS_DELUXE);      
@@ -398,7 +398,7 @@ public class App {
      */
     public static void llistarReservesPerTipus(int[] codis, String tipus) {
          // TODO: Implementar recursivitat
-         
+
     }
 
     /**
@@ -408,7 +408,7 @@ public class App {
         System.out.println("\n===== CONSULTAR RESERVA =====");
         // TODO: Mostrar dades d'una reserva concreta 
         //1. Pedir al usuario que introduzca el codigo de reserva.
-        int codiReservaUsuario = llegirEnter("Escriu el codi de la seua reserva: ");
+        int codiReservaUsuario = llegirEnter("Escriu el codi de la seua reserva: \n");
 
         //2. Comprobamos que el codigo existe.
         if (reserves.containsKey(codiReservaUsuario)) {
@@ -425,14 +425,6 @@ public class App {
     public static void obtindreReservaPerTipus() {
         System.out.println("\n===== CONSULTAR RESERVES PER TIPUS =====");
         // TODO: Llistar reserves per tipus
-        String tipus = seleccionarTipusHabitacio();
-        
-
-        }
-
-
-
-
     }
 
     /**
@@ -442,9 +434,10 @@ public class App {
        // TODO: Imprimir tota la informació d'una reserva
        if (reserves.containsKey(codi)) {
         ArrayList<String> d = reserves.get(codi);
-
+        
         System.out.println("Reserva: " + codi + "Tipus: " + d.get(0));        
        }
+
     }
 
     // --------- MÈTODES AUXILIARS (PER MILLORAR LEGIBILITAT) ---------
