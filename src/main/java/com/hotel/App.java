@@ -398,21 +398,7 @@ public class App {
      */
     public static void llistarReservesPerTipus(int[] codis, String tipus) {
          // TODO: Implementar recursivitat
-         if (codis == null || codis.length == 0) {
-            return;
-         }
-
-         int codiActual = codis[0];
-
-         if (reserves.containsKey(codiActual)) {
-            ArrayList<String> dades = reserves.get(codiActual);
-         }
-         if (codis.length > 1) {
-            int[] newCodis = new int[codis.length - 1];
-            System.arraycopy(codis, 1, newCodis, 0, newCodis.length); 
-            llistarReservesPerTipus(newCodis, tipus);
-         }
-
+         
     }
 
     /**
