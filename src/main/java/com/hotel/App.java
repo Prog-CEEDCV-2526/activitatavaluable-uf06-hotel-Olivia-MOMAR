@@ -142,7 +142,7 @@ public class App {
      */
     public static void reservarHabitacio() {
         System.out.println("\n===== RESERVAR HABITACIÓ =====");
-        //TODO:
+        //TODO: ESTE CREO QUE NO LO CORRIGE
         
        int tipus;
        double calcularPreuTotal = 0;   // Así a la vez que s ehace la selección de tipo de habitación y servicios va calculando el precio.    
@@ -162,9 +162,8 @@ public class App {
             System.out.println("    El preu es: " + preusHabitacions.get(TIPUS_DELUXE) + " €");        
             
             // 2. Ahora seleccionamos el tipo de habitación que queremos 
-        
-            System.out.print("\n Selecciona un tipus d'habitació (1,2 o 3): ");            
-            tipus = sc.nextInt();
+                               
+            tipus = llegirEnter("\n Selecciona un tipus d'habitació (1,2 o 3): ");
 
             if (tipus == 1){
                 System.out.println("Has seleccionat la habitació tipo estàndard " + TIPUS_ESTANDARD); 
@@ -185,6 +184,7 @@ public class App {
         } while (tipus < 1 || tipus > 3); //         
 
         // 3. Selecciona serveis addicionals
+        
         int serveis;
 
         do {
@@ -204,8 +204,7 @@ public class App {
             System.out.println("    El preu es: " + preusServeis.get(SERVEI_SPA) + " €");
 
             //3.2 Seleccionar el tipo de servicios
-            System.out.println("\n Selecciona els serveis addicionals que vuls afegir a la teua reserva: ");
-            serveis = sc.nextInt();
+            serveis = llegirEnter("\n Selecciona els serveis adicionals que vuls afegir a la teua reserva: ");
 
             switch (serveis) {
                 case 1:
@@ -293,7 +292,7 @@ public class App {
      */
     public static String seleccionarTipusHabitacioDisponible() {
         System.out.println("\nTipus d'habitació disponibles:");
-        //TODO:
+        //TODO: ESTE NO LO CORRIGE
         int habitacionsDisponibles;
         String seleccioClient = null;
         //1. Mostrar las habitaciones con precio y disponibilidad
@@ -405,15 +404,13 @@ public class App {
      */
     public static void obtindreReserva() {
         System.out.println("\n===== CONSULTAR RESERVA =====");
-        // TODO: Mostrar dades d'una reserva concreta
+        // TODO: Mostrar dades d'una reserva concreta NO LO CORRIGE
         //1. Pedir al usuario que introduzca el codigo de reserva.
-        int codiReserva; 
-        System.out.println("Escriu el codi de la seua reserva: ");
-        codiReserva = sc.nextInt();
+        int codiReservaUsuario = llegirEnter("Escriu el codi de la seua reserva: ");
 
         //2. Comprobamos que el codigo existe.
-        if (reserves.containsKey(codiReserva)) {
-            mostrarDadesReserva(codiReserva);
+        if (reserves.containsKey(codiReservaUsuario)) {
+            mostrarDadesReserva(codiReservaUsuario);
         } else {
             System.out.println("\n  El codi introduit no es correcte, per favor torne a introduirlo");
         } 
