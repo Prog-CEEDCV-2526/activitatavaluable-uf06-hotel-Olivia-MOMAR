@@ -162,6 +162,7 @@ public class App {
             disponibilitatHabitacions.put(tipus, nouTotal);
 
             float preuFinal = calcularPreuTotal(tipus, serveis);
+            dadesReserva.add(Float.toString(preuFinal));
 
             System.out.println("La seua reserva ha sigut completada");
             System.out.println("El seu codi de reserva es: " + codiReserva);
