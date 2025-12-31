@@ -222,15 +222,15 @@ public class App {
      */
     public static String seleccionarTipusHabitacioDisponible() {
         System.out.println("\nTipus d'habitació disponibles:");
-        //TODO: ESTE NO LO CORRIGE
+        //TODO: 
         int habitacionsDisponibles;
         String seleccioClient = null;
         //1. Mostrar las habitaciones con precio y disponibilidad
         do {
             System.out.println("\n Selecciona un tipus d'habitació: ");
-            System.out.println("1. " + TIPUS_ESTANDARD + "  Precio: " + preusHabitacions.get(TIPUS_ESTANDARD) + " €" + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_ESTANDARD));
-            System.out.println("2. " + TIPUS_SUITE + "  Precio: " + preusHabitacions.get(TIPUS_SUITE) + " €" + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_SUITE));
-            System.out.println("3. " + TIPUS_DELUXE + "  Precio: " + preusHabitacions.get(TIPUS_DELUXE) + " €" + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_DELUXE));
+            System.out.println("1. " + TIPUS_ESTANDARD + "  Precio: " + preusHabitacions.get(TIPUS_ESTANDARD) + " € " + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_ESTANDARD));
+            System.out.println("2. " + TIPUS_SUITE + "  Precio: " + preusHabitacions.get(TIPUS_SUITE) + " € " + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_SUITE));
+            System.out.println("3. " + TIPUS_DELUXE + "  Precio: " + preusHabitacions.get(TIPUS_DELUXE) + " € " + "  Disponibilitat: " + disponibilitatHabitacions.get(TIPUS_DELUXE));
 
             habitacionsDisponibles = llegirEnter(" Habitació escogida: ");
 
@@ -272,7 +272,7 @@ public class App {
      * els retorna en un ArrayList de String.
      */
     public static ArrayList<String> seleccionarServeis() {
-        //TODO: TIENE ERROR
+        //TODO: 
         ArrayList<String> serveisEscogits = new ArrayList<>();
         int servei;
 
@@ -362,9 +362,22 @@ public class App {
     public static void alliberarHabitacio() {
         System.out.println("\n===== ALLIBERAR HABITACIÓ =====");
          // TODO: Demanar codi, tornar habitació i eliminar reserva
+         int codiReserva;
+         codiReserva = llegirEnter("Escriu el codi de reserva: ");
 
+         if (reserves.containsKey(codiReserva)) {
+            ArrayList<String> dades = reserves.get(codiReserva);
+            String tipus = dades.get(0);
 
+            int libres = disponibilitatHabitacions.get(tipus);
+            disponibilitatHabitacions.put(tipus, libres + 1);
 
+            reserves.remove(codiReserva);
+            System.out.println("La reserva ha sigut eliminada amb exit");
+            
+         } else {
+            System.out.println("No hi ha ninguna reserva amb aquest codi");
+         }
     }
 
     /**
