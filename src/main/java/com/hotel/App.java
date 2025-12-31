@@ -372,6 +372,10 @@ public class App {
                     } else {
                         if (servei == 4) {
                             serveiSeleccionat = SERVEI_SPA;
+                        } else {
+                            if (servei == 5) {
+                                System.out.println("Finalitzant");
+                            }
                         }
                     }
                 }
@@ -442,6 +446,7 @@ public class App {
      */
     public static void consultarDisponibilitat() {
         // TODO: Mostrar lliures i ocupades
+
     }
 
     /**
