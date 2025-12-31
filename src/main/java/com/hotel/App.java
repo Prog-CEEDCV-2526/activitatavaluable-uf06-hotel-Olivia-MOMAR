@@ -386,14 +386,9 @@ public class App {
     public static void consultarDisponibilitat() {
         // TODO: Mostrar lliures i ocupades
         System.out.println("TIPUS\tLLIURES\tOCUPADES");
-        
-       String[] tipus = {TIPUS_ESTANDARD, TIPUS_SUITE, TIPUS_DELUXE};
-       for (int i=0; i < tipus.length; i++); {
-        String t = tipus[i];
-        int lliures = disponibilitatHabitacions.get(t);
-        int ocupades = capacitatInicial.get(t) - lliures;
-        System.out.println(t + "\t" + lliures + "\t" + ocupades");
-       }           
+        mostrarDisponibilitatTipus(TIPUS_ESTANDARD);
+        mostrarDisponibilitatTipus(TIPUS_SUITE);
+        mostrarDisponibilitatTipus(TIPUS_DELUXE);        
 
     }
 
