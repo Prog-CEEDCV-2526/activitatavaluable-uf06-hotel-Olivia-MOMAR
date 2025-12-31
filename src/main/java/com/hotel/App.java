@@ -273,20 +273,21 @@ public class App {
      */
     public static ArrayList<String> seleccionarServeis() {
         //TODO: 
-        ArrayList<String> serveisEscogits = new ArrayList<>();
         int servei;
+        ArrayList<String> serveisEscogits = new ArrayList<String>();
+        System.out.println("Llistat de serveis addicionals disponibles: ");
 
         do {
-            System.out.println("Llistat de serveis addicionals disponibles: ");
-            System.out.println("\n 1." + " " + SERVEI_ESMORZAR + " " + preusServeis.get(SERVEI_ESMORZAR) + " €");
-            System.out.println("\n 2." + " " + SERVEI_GIMNAS + " " + preusServeis.get(SERVEI_GIMNAS) + " €");
-            System.out.println("\n 3." + " " + SERVEI_PISCINA + " " + preusServeis.get(SERVEI_PISCINA) + " €");
-            System.out.println("\n 4." + " " + SERVEI_SPA + " " + preusServeis.get(SERVEI_SPA) + " €");
-            System.out.println("\n 5. Finalitzant ");
+            System.out.println("0. Finalitzar");
+            System.out.println("1." + " " + SERVEI_ESMORZAR + " " + preusServeis.get(SERVEI_ESMORZAR) + " €");
+            System.out.println("2." + " " + SERVEI_GIMNAS + " " + preusServeis.get(SERVEI_GIMNAS) + " €");
+            System.out.println("3." + " " + SERVEI_PISCINA + " " + preusServeis.get(SERVEI_PISCINA) + " €");
+            System.out.println("4." + " " + SERVEI_SPA + " " + preusServeis.get(SERVEI_SPA) + " €");
+            
 
             servei = llegirEnter("Selecciona el serveis que vulgues: \n");
 
-            String serveiSeleccionat = "";
+            String serveiSeleccionat = sc.next();
             if (servei == 1) {
                     serveiSeleccionat = SERVEI_ESMORZAR;
             } else {
@@ -299,7 +300,7 @@ public class App {
                         if (servei == 4) {
                             serveiSeleccionat = SERVEI_SPA;
                         } else {
-                            if (servei == 5) {
+                            if (servei == 0) {
                                 System.out.println("Finalitzant");
                             }
                         }
@@ -385,7 +386,7 @@ public class App {
      */
     public static void consultarDisponibilitat() {
         // TODO: Mostrar lliures i ocupades
-        System.out.println("TIPUS\tLLIURES\tOCUPADES");
+        System.out.println("Tipus\tLliures\tOcupades");
         mostrarDisponibilitatTipus(TIPUS_ESTANDARD);
         mostrarDisponibilitatTipus(TIPUS_SUITE);
         mostrarDisponibilitatTipus(TIPUS_DELUXE);      
