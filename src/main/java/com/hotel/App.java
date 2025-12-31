@@ -162,8 +162,10 @@ public class App {
             System.out.println("    El preu es: " + preusHabitacions.get(TIPUS_DELUXE) + " €");        
             
             // 2. Ahora seleccionamos el tipo de habitación que queremos 
-                               
-            tipus = llegirEnter("\n Selecciona un tipus d'habitació (1,2 o 3): ");
+        
+            System.out.print("\n Selecciona un tipus d'habitació (1,2 o 3): ");            
+            tipus = sc.nextInt();
+            sc.nextLine();
 
             if (tipus == 1){
                 System.out.println("Has seleccionat la habitació tipo estàndard " + TIPUS_ESTANDARD); 
@@ -184,7 +186,6 @@ public class App {
         } while (tipus < 1 || tipus > 3); //         
 
         // 3. Selecciona serveis addicionals
-        
         int serveis;
 
         do {
@@ -204,7 +205,10 @@ public class App {
             System.out.println("    El preu es: " + preusServeis.get(SERVEI_SPA) + " €");
 
             //3.2 Seleccionar el tipo de servicios
-            serveis = llegirEnter("\n Selecciona els serveis adicionals que vuls afegir a la teua reserva: ");
+            System.out.println("\n Selecciona els serveis addicionals que vuls afegir a la teua reserva: ");
+            serveis = sc.nextInt();
+            sc.nextLine();
+
 
             switch (serveis) {
                 case 1:
