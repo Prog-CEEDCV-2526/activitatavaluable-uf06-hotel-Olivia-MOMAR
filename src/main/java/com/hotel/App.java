@@ -347,8 +347,55 @@ public class App {
      */
     public static ArrayList<String> seleccionarServeis() {
         //TODO:
+        ArrayList<String> serveisEscogits = new ArrayList<>();
+        int servei;
 
-        return null;
+        do {
+            System.out.println("Llistat de serveis addicionals disponibles: ");
+            System.out.println("\n 1." + " " + SERVEI_ESMORZAR + " " + preusServeis.get(SERVEI_ESMORZAR) + " €");
+            System.out.println("\n 2." + " " + SERVEI_GIMNAS + " " + preusServeis.get(SERVEI_GIMNAS) + " €");
+            System.out.println("\n 3." + " " + SERVEI_PISCINA + " " + preusServeis.get(SERVEI_PISCINA) + " €");
+            System.out.println("\n 4." + " " + SERVEI_SPA + " " + preusServeis.get(SERVEI_SPA) + " €");
+            System.out.println("\n 5. Finalitzant ");
+
+            servei = llegirEnter("Selecciona el serveis que vulgues: ");
+
+            String serveiSeleccionat = "";
+            switch (servei) {
+                case 1:
+                    serveiSeleccionat = SERVEI_ESMORZAR
+                    break;
+                case 2:
+                    serveiSeleccionat = SERVEI_GIMNAS
+                    break;  
+                case 3:
+                    serveiSeleccionat = SERVEI_PISCINA
+                    break;
+                case 4:
+                    serveiSeleccionat = SERVEI_SPA
+                    break;
+                case 5:
+                    System.out.println("Ha terminat de escogir el serveis");
+                    break;              
+            
+                default:
+                    System.out.println("Opció incorrecta, torna ha intertar-ho");
+                    break;
+            }
+
+            // Ahora tenemos que comprobar si ese servicio ya esta cogido para que no puedan cogerlo dos veces.
+            if (servei >= 1 && servei <=4>) {
+                if (serveisEscogits.contains(serveiSeleccionat)) {
+                    System.out.println("Error: Ya ha seleccionat este servei previament");
+                } else {
+                    serveisEscogits.add(serveiSeleccionat);
+                    System.out.print("Ha seleccionat el següente servei: " + serveiSeleccionat);
+                }
+            }
+            
+        } while (servei !=5 && serveisEscogits.size() < 4);
+
+        return serveisEscogits;
     }
 
     /**
